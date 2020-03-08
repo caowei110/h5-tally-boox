@@ -36,6 +36,10 @@
 				"enablePullDownRefresh": true
 			}
         }
+        ,{
+            "path" : "pages/index/statistics",
+            "style" : {}
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

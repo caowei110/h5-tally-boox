@@ -107,6 +107,7 @@
 				this.valueEchoed(date)
 			},
 			bindDateChange(e) {
+				console.log(e)
 				this.childValue = e.target.value
 			},
 			dateInit() {

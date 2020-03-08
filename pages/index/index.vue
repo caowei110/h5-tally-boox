@@ -11,8 +11,9 @@
 					<text>收入: ¥{{parseFloat(amountAll.in).toFixed(2)}}</text>
 				</view>
 			</view>
-			<view class="tongji-right">
-				<text class="tj-btn">统计 ></text></view>
+			<view class="tongji-right" @click="goStacs">
+				<text class="tj-btn">统计 ></text>
+			</view>
 		</view>
 		<view class="acct-list-wrap">
 			<view class="acct-list-item" @click="goDetail(v._id)" v-for="v,key in goodsList" :key="key">
@@ -35,7 +36,7 @@
 </template>
 
 <script>
-		import moment from 'moment';
+	import moment from 'moment';
 	import uniLoadMore from '@/components/uni-load-more/uni-load-more.vue';
 	import dyDatePicker from '@/components/dy-Date/dy-Date.vue'
 	export default {
@@ -45,6 +46,7 @@
 		},
 		data() {
 			return {
+				
 				currentMonth:"2020-03",
 				amountAll:{in:0,out:0},
 				status: 'more',
@@ -97,6 +99,12 @@
 			}
 		},
 		methods: {
+			goStacs(){
+				uni.navigateTo({
+					url: `./statistics`,
+					
+				});
+			},
 			bindPickerChange(e) {
 				this.currentType = this.array[e.detail.value];
 			},
@@ -108,6 +116,7 @@
 				this.getGroup();
 				this.getList();
 			},
+			
 			goDetail(id) {
 				uni.navigateTo({
 					url: `../bill/bill-detail?id=${id}&disabled=true`,
@@ -116,6 +125,7 @@
 					complete: () => {}
 				});
 			},
+			
 			getGroup(){
 				uniCloud.callFunction({
 					name: 'count',

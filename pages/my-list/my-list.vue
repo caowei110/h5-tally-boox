@@ -15,7 +15,8 @@
 					</view>
 				</view>
 				<view class="tongji-right">
-					<button @click="goDetail(null)">新增账单</button>
+					<view style="margin-bottom: 20rpx;" @click="goStacs" class="tj-btn">统计 ></view>
+					<button type="primary" @click="goDetail(null)">新增账单</button>
 
 				</view>
 			</view>
@@ -127,6 +128,12 @@
 			}
 		},
 		methods: {
+			goStacs(){
+				uni.navigateTo({
+					url: `../index/statistics?id=${this.userInfo._id}`,
+					
+				});
+			},
 			getData(e) {
 				this.currentMonth = e;
 				this.amountAll.in = 0;
