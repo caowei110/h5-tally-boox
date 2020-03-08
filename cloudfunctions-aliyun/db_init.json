@@ -1,0 +1,58 @@
+// 在本文件中可配置云数据库初始化，数据格式见：https://uniapp.dcloud.io/uniCloud/quickstart?id=db-init
+
+// 编写完毕后对本文件点右键，可按配置规则创建表和添加数据
+
+
+{
+	"user": { // 用户表
+		"data": [ // 数据
+			{
+				"name": "tom",
+				"pwd": "xxx", 
+				"phone_num": "13545454587",
+				"create_time":"2016-11-10 08:30:01"
+			}
+		],
+		"index": [{ // 索引
+			"IndexName": "user_id", // 索引名称
+			"MgoKeySchema": { // 索引规则
+				"MgoIndexKeys": [{
+					"Name": "_id", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		}]
+	},
+	"bill": { // 账单
+		"data": [ // 数据
+			{
+			  "amount": 25,
+			  "create_time": "2016-11-10 08:30:01",
+			  "deal_month": 2,
+			  "deal_mouth": 11,
+			  "deal_time": "2020-02-01 00:00:00",
+			  "deal_year": 2020,
+			  "goods": "黄瓜",
+			  "goods_ava": "https://vkceyugu.cdn.bspapp.com/VKCEYUGU-h5-tally-boox/ff729ca0-60e5-11ea-bfc7-a3366b07ef3a.jpeg",
+			  "goods_num": 5,
+			  "income_type": "0",
+			  "job_num": "1001",
+			  "modificat_id": "5e62fcaec4952d004e9e9bab",
+			  "remark": "备注内容",
+			  "type": "0",
+			  "unit_price": 5
+			}
+		],
+		"index": [{ // 索引
+			"IndexName": "index_id", // 索引名称
+			"MgoKeySchema": {
+				"MgoIndexKeys": [{
+					"Name": "_id", // 索引字段
+					"Direction": "1" // 索引方向，1：ASC-升序，-1：DESC-降序
+				}],
+				"MgoIsUnique": false // 索引是否唯一
+			}
+		}]
+	}
+}

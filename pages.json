@@ -1,0 +1,65 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "咚咚锵记账系统",
+				"enablePullDownRefresh": true
+			}
+		}
+	    ,{
+            "path" : "pages/user/login",
+            "style" : {
+				"navigationBarTitleText": "用户登录"
+			}
+        }
+		,{
+		    "path" : "pages/user/reg",
+		    "style" : {
+				"navigationBarTitleText": "用户注册"
+			}
+		}
+        ,{
+            "path" : "pages/bill/bill",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/bill/bill-detail",
+            "style" : {
+				"navigationBarTitleText": "账单详情"
+			}
+        }
+        ,{
+            "path" : "pages/my-list/my-list",
+            "style" : {
+				"navigationBarTitleText": "我的账单",
+				"enablePullDownRefresh": true
+			}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#000",
+		"selectedColor": "#007AFF",
+		"borderStyle": "black",
+		"backgroundColor": "#F8F8F8",
+		"list": [{
+				"pagePath": "pages/index/index",
+				"iconPath": "static/example/n1.png",
+				"selectedIconPath": "static/example/n1-s.png",
+				"text": "全部"
+			},
+			{
+				"pagePath": "pages/my-list/my-list",
+				"iconPath": "static/example/n3.png",
+				"selectedIconPath": "static/example/n3-s.png",
+				"text": "我的"
+			}
+		]
+	}
+}
